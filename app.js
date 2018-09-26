@@ -2,7 +2,7 @@ const app = require('express')();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/passportjsdb');
+mongoose.connect('mongodb://localhost:27017/authenticationpracticedb');
 mongoose.connection.on('open', function() {
     console.log('Connection with DB established');
 });
