@@ -4,17 +4,6 @@ const LocalStrategy = require('passport-local');
 
 const Users = mongoose.model('Users');
 
-// supplanting mongoose's real fetch function in order to be able to mock DB
-Users.findOne = function(params) {
-    return new Promise(function(resolve, reject) {
-        resolve({
-            email: params.email,
-            id: 1,
-            name: 'Pera Peric'
-        });
-    });
-};
-
 passport.use(new LocalStrategy({
     usernameField: 'user[email]',
     passwordField: 'user[password]'
