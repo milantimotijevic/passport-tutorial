@@ -53,4 +53,8 @@ router.get('/products', auth.required, function(req, res) {
     res.send(['tooth pick', 'cat holder', 'bazooka', 'Frostmourne', 'Florida ballot']);
 });
 
+router.get('/crazy-stuff', function(req, res) { // apparently skipping the auth.required arg is equivalent to setting it to optional
+    res.send('DIS BE SUM CRAZY STUFF!');
+});
+
 module.exports = router;
